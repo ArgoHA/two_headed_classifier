@@ -33,7 +33,7 @@ class CustomDataset(Dataset):
     ) -> None:
         self.root_path = root_path
         self.split = split
-        self.img_size = (224, 224)
+        self.img_size = (256, 256)
         self.norm = ([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         self._init_augs(train_mode)
 
