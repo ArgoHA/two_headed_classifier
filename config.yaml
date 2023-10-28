@@ -1,0 +1,19 @@
+project_name: generic two headed classifier
+exp: baseline
+
+train:
+  root: /home/argo/Desktop/Projects/two_headed_example
+
+  device: cuda
+  batch_size: 256
+  epochs: 9
+
+  scheduler_step_size: 4
+
+  num_workers: 10
+
+  data_path: ${train.root}/dataset
+  models_path: ${train.root}/models
+  path_to_save: ${train.models_path}/${exp}
+
+  seed: 42
