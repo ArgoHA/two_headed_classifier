@@ -165,11 +165,10 @@ class CustomShuffleNet(nn.Module):
         # Pass through the separate convolutions for each head
         x1 = self.head1_conv(x)
         x1 = x1.mean([2, 3])  # globalpool for first head
+        out1 = self.fc1(x1)
 
         x2 = self.head2_conv(x)
         x2 = x2.mean([2, 3])  # globalpool for second head
-
-        out1 = self.fc1(x1)
         out2 = self.fc2(x2)
         return out1, out2
 
